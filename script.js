@@ -1,3 +1,5 @@
+let expandedProducto = null;
+
 function mostrarDetalles(productoId) {
     const producto = document.getElementById(productoId);
 
@@ -9,5 +11,13 @@ function mostrarDetalles(productoId) {
         expandedProducto = producto;
     } else {
         expandedProducto = null;
+    }
+}
+
+function comprarProducto(productoId) {
+    const producto = document.getElementById(productoId);
+    if (producto) {
+        alert(`Compro: ${producto.querySelector('h3').innerText}` +
+              `\nCantidad: ${producto.querySelector('input[type="number"]').value}`);
     }
 }
